@@ -5,3 +5,22 @@ service:
   projectIdentifier: technical_exercise
   tags:
     "32": ""
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: manifest
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: account.ghconnectoracc
+                  gitFetchType: Branch
+                  paths:
+                    - kubernetes/manifests/alpine
+                  repoName: harness-yaml-templates
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+    type: Kubernetes
