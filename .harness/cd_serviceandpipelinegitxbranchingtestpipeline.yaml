@@ -15,6 +15,15 @@ pipeline:
           deploymentType: Kubernetes
           service:
             serviceRef: serviceandpipelinegitxbranchingtestservice
+            serviceInputs:
+              serviceDefinition:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+            gitBranch: develop
           environment:
             environmentRef: dev
             deployToAll: false
