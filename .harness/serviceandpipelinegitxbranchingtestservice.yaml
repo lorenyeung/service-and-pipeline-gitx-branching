@@ -1,0 +1,7 @@
+service:
+  name: service-and-pipeline-gitx-branching-test-service
+  identifier: serviceandpipelinegitxbranchingtestservice
+  orgIdentifier: default
+  projectIdentifier: technical_exercise
+  tags:
+    "32": ""
