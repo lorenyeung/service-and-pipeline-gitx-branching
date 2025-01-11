@@ -23,4 +23,15 @@ service:
                   branch: main
               skipResourceVersioning: false
               enableDeclarativeRollback: false
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.lorenharnessdockerhub
+                imagePath: library/nginx
+                tag: <+input>
+                digest: ""
+              identifier: dockerhub
+              type: DockerRegistry
     type: Kubernetes
